@@ -25,3 +25,7 @@ Route::get('/', function(Request $request, Response $response) {
 		'message' => 'Welcome to your awesome panga, Happy tasks!'
 	];
 });
+
+Route::post('/v1/signup', 'Api\UsersController@signup')->name('users.signup');
+
+
