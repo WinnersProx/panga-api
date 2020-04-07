@@ -14,11 +14,11 @@ class UsersController extends Controller {
         	return response()->json([
         		'status' => 400,
         		'errors' => $validate->errors()
-        	]);
+        	], 400);
         }
 
 		$user = User::create($request->only('name', 'email', 'password'));
 		// send confirmation email
-		return response()->json(['user' => $user]);
+		return response()->json(['status' => 201, 'user' => $user], 201);
 	}
 }
